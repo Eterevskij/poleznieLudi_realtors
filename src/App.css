@@ -1,38 +1,352 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600&display=swap');
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1312px;
+  margin: 0 auto;
+}
+
+.bestRealtors__title {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.bestRealtors__title__city {
+  color: #4db663;
+}
+
+.bestRealtors__list {
+  margin-top: 66px;
+  border: 1px solid #BCBEC0;
+  border-radius: 16px;
+  padding: 20px 16px;
+  color: #2b2b2b;
+}
+
+.bestRealtors__list {
+  font-family: Inter;
+}
+
+.bestRealtors__list__item {
+  transition: background 0.2s;
+  position: relative;
+  border-radius: 12px;
+  padding: 12px 0px;
+  width: 100%;
+}
+
+.bestRealtors__list__item+.bestRealtors__list__item {
+  margin-top: 24px;
+}
+
+.bestRealtors__list__item+.bestRealtors__list__item::before {
+  top: -12px;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: #E1E1E1;
+}
+
+.bestRealtors__list__item__place {
+  font-size: 20px;
+  font-weight: 500;
+  color: #4db663;
+}
+
+.bestRealtors__list__item:first-child .bestRealtors__list__item__name {
+  color: #4db663;
+}
+
+.bestRealtors__list__item:first-child .bestRealtors__list__item__place {
+  color: #F4B71A;
+}
+
+.bestRealtors__list__item:first-child .bestRealtors__list__item__place::before {
+  margin-left: -11px;
+  position: absolute;
+  content: '';
+  width: 11px;
+  height: 24px;
+  background: url(./icons/awardL.svg);
+  display: block;
+  top: 0;
+  left: -23px;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.bestRealtors__list__item:first-child .bestRealtors__list__item__place::after {
+  margin-right: 11px;
+  position: absolute;
+  content: '';
+  width: 11px;
+  height: 24px;
+  background: url(./icons/awardR.svg);
+  display: block;
+  top: 0;
+  left: 0px;
+  right: -23px;
+  bottom: 0;
+  margin: auto;
+}
+
+.bestRealtors__list__item:hover {
+  background: #f4f4f4;
+}
+
+.bestRealtors__list__item:hover .bestRealtors__list__item__categories__item p {
+  background: #fff;
+}
+
+.bestRealtors__list__item__place {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bestRealtors__list__item .ant-row {
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bestRealtors__list__item__img {
+  border-radius: 8px;
+  width: 80px;
+  height: 80px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.bestRealtors__list__item__name {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.bestRealtors__list__item__city {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.bestRealtors__list__item__city p {
+  margin-left: 6px;
+  color: #4f4f4f;
+  font-size: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.bestRealtors__list__item__rating.mobile {
+  display: none;
+  margin-left: 12px;
+}
+
+.bestRealtors__list__item__rating.mobile h6 {
+  font-size: 14px;
+}
+
+.bestRealtors__list__item__rating.mobile img {
+  width: 20px;
+  height: 20px;
+}
+
+.bestRealtors__list__item__categories__item p {
+  transition: background 0.2s;
+  padding: 1px 8px;
+  color: #2B2B2B;
+  display: inline-block;
+  border-radius: 4px;
+  background: #f4f4f4;
+}
+
+.bestRealtors__list__item__categories__item {
+  margin-top: 12px;
+  margin-left: 12px;
+}
+
+.bestRealtors__list__item__categories {
+  margin-top: -12px;
+  margin-left: calc(-12px + 30px);
+}
+
+.bestRealtors__list__item__rating {
+  display: flex;
+  align-items: center;
+}
+
+.bestRealtors__list__item__rating h6 {
+  margin-left: 8px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* @media (max-width: 1350px) {
+  .container {
+    padding: 0 20px;
   }
-  to {
-    transform: rotate(360deg);
+} */
+
+
+@media (max-width: 1280px) {
+
+  .bestRealtors__list {
+    margin-top: 50px;
   }
+
+  .bestRealtors__list__item__place {
+    font-size: 16px;
+  }
+
+  .bestRealtors__list__item__name {
+    font-size: 20px;
+  }
+
+  .bestRealtors__list__item__categories__item {
+    font-size: 12px;
+  }
+
+}
+
+@media (max-width: 1200px) {
+
+      .bestRealtors__list__item__rating.mobile {
+        display: flex;
+      }
+}
+
+@media (max-width: 1024px) {
+
+  .bestRealtors__list {
+    margin-top: 40px;
+  }
+
+  .bestRealtors__title {
+    font-size: 40px;
+  }
+
+  .bestRealtors__list__item__name {
+    font-size: 16px;
+  } 
+
+  .bestRealtors__list__item__city p{
+    font-size: 14px;
+  }
+
+  .bestRealtors__list__item__categories__item {
+    font-size: 12px;
+    margin-top: 8px;
+    margin-top: 8px;
+  }
+
+  .bestRealtors__list__item__categories {
+    margin-top: -8px;
+    margin-top: -8px;
+  }
+
+  .bestRealtors__list__item__img {
+    width: 64px;
+    height: 64px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .bestRealtors__list {
+    margin-top: 32px;
+  }
+
+  .bestRealtors__list__item__categories {
+    margin-left: -12px;
+  }
+  
+  .bestRealtors__title {
+    font-size: 32px;
+  }
+
+  .bestRealtors__list__item__city p {
+    font-size: 14px;
+  }
+
+  .bestRealtors__placeWrapper.mobileSmall {
+    display: none;
+  }
+
+  .bestRealtors__list__item__categories {
+    margin-top: 12px;
+  } 
+
+  .bestRealtors__list__item__name {
+    font-size: 20px;
+  } 
+
+}
+
+@media (max-width: 320px) {
+
+  .bestRealtors__list {
+    margin-top: 40px;
+  }
+
+  .bestRealtors__list__item {
+    padding: 16px 16px;
+  }
+
+  .bestRealtors__title {
+    font-size: 24px;
+  }
+
+  .bestRealtors__list__item:first-child .bestRealtors__list__item__place::before {
+    left: -75px;
+  }
+
+  .bestRealtors__list__item:first-child .bestRealtors__list__item__place::after {
+    right: -75px;
+  }
+
+  .bestRealtors__list__item {
+    padding: 16px;
+    height: auto;
+  }
+
+  .bestRealtors__place.mobileSmall {
+    display: block;
+  }
+
+  .bestRealtors__list__item__placeWrapper.mobileBig {
+    display: none;
+  }
+
+  .bestRealtors__placeWrapper.mobileSmall {
+    display: block;
+  }
+
+  .bestRealtors__list__item__categoriesWrapper {
+    margin-left: 0;
+  }
+
+  .bestRealtors__list__item__mainInfo {
+    flex: 0 0 100%;
+    max-width: 100%;  
+  }
+
+  .bestRealtors__list__item__allUserInfo {
+    flex: 0 0 100%;
+    max-width: 100%;  
+  }
+
+  .bestRealtors__list__item__categoriesWrapper  {
+    flex: 0 0 100%;
+    max-width: 100%;  
+  }
+
+  .bestRealtors__list__item__mainInfo {
+    margin-top: 16px;
+  }
+
 }
